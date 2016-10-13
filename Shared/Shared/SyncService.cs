@@ -23,33 +23,25 @@ namespace Shared
 
         public byte[] PostSync(string xml)
         {
-            return __POST(httppostSync, xml, true, false);
+            return __POST(Url, xml, true, false);
         }
         
-        private async byte[] __POST(HttpPost httpost, string xml, bool logError, bool closeConnection) {
+        private async byte[] __POST(string url, string xml, bool logError, bool closeConnection) {
 
-		    FileStream se = null;
-		
-		    try {
-			    LastTransmissionFailed = false;
-			    if (string.IsNullOrEmpty(xml)) {
-				    return null;
-			    }
+	
+			LastTransmissionFailed = false;
+			if (string.IsNullOrEmpty(xml)) {
+				return null;
+			}
 			
-			    byte[] gzipXml = null;
+			var gzipXml = Compress(xml);			    
 			
-			    gzipXml = Compress(xml);
-			
-			    if (gzipXml == null) {
-				    return null;
-			    }
-			    se = new FileStream(gzipXml);
+			if (gzipXml == null) {
+				return null;
+			}
+			var se = new MemoryStream(gzipXml);
 
-		    } catch (Exception e) {
-			    LastTransmissionFailed = true;
-			    var error = "Could not prepare communicate with server: " + e.Message;
-			    return null;
-		    }
+
 		    try
 		    {
 		        string responseString;
@@ -63,7 +55,7 @@ namespace Shared
 
                     var content = new FormUrlEncodedContent(values);
 
-                    var response = await client.PostAsync(Url, content);
+                    var response = await client.PostAsync(url, content);
 
                     responseString = await response.Content.ReadAsStringAsync();
                 }
@@ -105,22 +97,49 @@ namespace Shared
 		    }
 	    }
 
-        public static void Compress(FileInfo fileToCompress)
+        public static byte[] Compress(string str)
         {
-            using (FileStream originalFileStream = fileToCompress.OpenRead())
+            var bytes = Encoding.UTF8.GetBytes(str);
+
+            using (var msi = new MemoryStream(bytes))
+            using (var mso = new MemoryStream())
             {
-                if ((File.GetAttributes(fileToCompress.FullName) & FileAttributes.Hidden) != FileAttributes.Hidden & fileToCompress.Extension != ".gz")
-                {
-                    using (FileStream compressedFileStream = File.Create(fileToCompress.FullName + ".gz"))
-                    {
-                        using (var compressionStream = new GZipStream(compressedFileStream, CompressionLevel.Fastest))
-                        {
-                            originalFileStream.CopyTo(compressionStream);
-                        }
-                    }
+                using (var gs = new GZipStream(mso, CompressionMode.Compress))
+                {                    
+                    CopyTo(msi, gs);
                 }
+
+                return mso.ToArray();
             }
         }
+
+        public static string Decompress(byte[] bytes)
+        {
+            using (var msi = new MemoryStream(bytes))
+            using (var mso = new MemoryStream())
+            {
+                using (var gs = new GZipStream(msi, CompressionMode.Decompress))
+                {                    
+                    CopyTo(gs, mso);
+                }
+
+                return Encoding.UTF8.GetString(mso.ToArray());
+            }
+        }
+
+        public static void CopyTo(Stream src, Stream dest)
+        {
+            byte[] bytes = new byte[4096];
+
+            int cnt;
+
+            while ((cnt = src.Read(bytes, 0, bytes.Length)) != 0)
+            {
+                dest.Write(bytes, 0, cnt);
+            }
+        }
+
+
 
 
     }
