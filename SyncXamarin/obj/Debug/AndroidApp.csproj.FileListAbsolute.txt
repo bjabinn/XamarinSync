@@ -1,0 +1,11 @@
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\bin\Debug\SyncXamarin.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\bin\Debug\SyncXamarin.pdb
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\bin\Debug\SyncXamarin.SyncXamarin.apk
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\bin\Debug\SyncXamarin.SyncXamarin-Signed.apk
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\AndroidApp.csprojResolveAssemblyReference.cache
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\SyncXamarin.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\SyncXamarin.pdb
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\android\bin\SyncXamarin.SyncXamarin.apk
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\res\values\strings.xml
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\R.cs.flag
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\SyncXamarin\obj\Debug\uploadflags.txt

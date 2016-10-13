@@ -1,0 +1,4 @@
+Shared.Droid.MainActivity, Shared.Droid;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
+Shared.Droid.MainActivity, Shared.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
+Shared.Droid.MainActivity;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
+shared.droid.MainActivity;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
