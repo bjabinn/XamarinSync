@@ -2,24 +2,19 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Net.Http;
+using System.IO;
+using System.IO.Compression;
 
 
 namespace Shared
 {
     public class SyncService
     {
-        string Defaulurl = Settings.GetString("Defaulurl");
-        string Url = Defaulurl + "/service/IOS3.aspx";
-        string mmUrl = Defaulurl + "/service/mm.aspx";
-
-        string RedirectUrl = "";
-        string ServiceUri = "Service/IOS3.aspx";
+        static string DefaultUrl = "http://rabattz.de"; //Settings.GetString("Defaulurl");
+        string Url = DefaultUrl + "/service/IOS3.aspx";
+        string mmUrl = DefaultUrl + "/service/mm.aspx";
 
         public bool LastTransmissionFailed = false;
-
-
-
-
 
         public string ConstructXml(StringBuilder xmlRequest, bool force, bool basketOnly, int maxSync)
         {
@@ -31,9 +26,9 @@ namespace Shared
             return __POST(httppostSync, xml, true, false);
         }
         
-        private byte[] __POST(HttpPost httpost, string xml, bool logError, bool closeConnection) {
+        private async byte[] __POST(HttpPost httpost, string xml, bool logError, bool closeConnection) {
 
-		    ByteArrayEntity se = null;
+		    FileStream se = null;
 		
 		    try {
 			    LastTransmissionFailed = false;
@@ -48,7 +43,7 @@ namespace Shared
 			    if (gzipXml == null) {
 				    return null;
 			    }
-			    se = new ByteArrayEntity(gzipXml);
+			    se = new FileStream(gzipXml);
 
 		    } catch (Exception e) {
 			    LastTransmissionFailed = true;
@@ -77,9 +72,9 @@ namespace Shared
 		            return null;
 		        }
 			
-			    GZIPInputStream stream = null;
+			    GZipStream stream = null;
 			    try {
-				    stream = new GZIPInputStream(is);
+				    stream = new GZipStream(is, CompressionLevel.Optimal);
 				    byte[] bytes = IOUtils.toByteArray(stream);
 				    return bytes;
 				
@@ -89,8 +84,9 @@ namespace Shared
 				    return null;
 			    }
 			    finally {
-				    if (stream != null) {
-					    stream.close();
+				    if (stream != null)
+				    {
+				        stream.Close();
 				    }
 				    if (is != null) {
 					    is.close();
@@ -108,6 +104,23 @@ namespace Shared
 			    }
 		    }
 	    }
+
+        public static void Compress(FileInfo fileToCompress)
+        {
+            using (FileStream originalFileStream = fileToCompress.OpenRead())
+            {
+                if ((File.GetAttributes(fileToCompress.FullName) & FileAttributes.Hidden) != FileAttributes.Hidden & fileToCompress.Extension != ".gz")
+                {
+                    using (FileStream compressedFileStream = File.Create(fileToCompress.FullName + ".gz"))
+                    {
+                        using (var compressionStream = new GZipStream(compressedFileStream, CompressionLevel.Fastest))
+                        {
+                            originalFileStream.CopyTo(compressionStream);
+                        }
+                    }
+                }
+            }
+        }
 
 
     }

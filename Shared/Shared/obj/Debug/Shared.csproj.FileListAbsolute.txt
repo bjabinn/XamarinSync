@@ -5,5 +5,3 @@ C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\S
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.pdb
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.dll.mdb
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\bin\Debug\Shared.dll.mdb
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.dll.mdb
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\bin\Debug\Shared.dll.mdb
