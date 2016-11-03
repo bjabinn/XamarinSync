@@ -1,10 +1,7 @@
 ﻿using System.Threading;
 using Android.App;
-using Android.Content;
-using Android.OS;
 using Android.Util;
-using Android.Widget;
-using Java.IO;
+
 
 namespace Shared.Droid
 {
@@ -12,8 +9,7 @@ namespace Shared.Droid
     public class ServiceManagement : ServiceBase
     {
        public override bool DoWork()
-        {
-            var forced = false;
+        {            
             var maxSync = 800;
             
             Log.Debug("ServiceManagement", "Service started");
@@ -21,31 +17,32 @@ namespace Shared.Droid
             var t = new Thread(() =>
             {
                 var uniqueInstaceToSync = new SyncService();
-                var xmlRequest = uniqueInstaceToSync.ConstructXml(null, forced, false, maxSync);
+                var xmlRequest = uniqueInstaceToSync.ConstructXml(null, false, false, maxSync);
 
                 if (string.IsNullOrEmpty(xmlRequest))
                 {
-                    return true;
+                    return;
                 }
-
-                byte[] bytes = uniqueInstaceToSync.PostSync(xmlRequest);
+                
+                var bytes = uniqueInstaceToSync.PostSync(xmlRequest);
                 if (bytes == null)
                 {
                     if (uniqueInstaceToSync.LastTransmissionFailed)
                     {
-                        SyncFailedException();
+                        //SyncFailedException();
                     }
-                    return false;
+                    return;
                 }
 
-                Document doc = getDocFromBytes(bytes);
-                if (doc == null)
+                var doc = new XmlHelper();
+                var xmlIncoming = doc.ByteArrayToXml(bytes);
+                if (xmlIncoming == null)
                 {
-                    syncFailed();
-                    return false;
+                    //syncFailed();
+                    //return false;
                 }
                                 
-                Thread.Sleep(12000);
+                Thread.Sleep(50000);
 
                 Log.Debug("ServiceManagement", "Stopping foreground");
                 StopForeground(true);
@@ -55,10 +52,11 @@ namespace Shared.Droid
             );
 
             t.Start();
-        }
+           return true;
+        } //end DoWork
 
 
 
-    }
-}
+    } //end class
+} //end namespace
 

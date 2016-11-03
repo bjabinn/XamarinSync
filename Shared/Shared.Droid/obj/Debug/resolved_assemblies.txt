@@ -1,10 +1,11 @@
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\Shared.Droid.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\Syn_Android.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\Mono.Android.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\mscorlib.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\Shared.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Core.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Xml.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Xml.Linq.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Collections.Concurrent.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Collections.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.ComponentModel.Annotations.dll
@@ -56,8 +57,9 @@ C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\S
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Xml.XmlSerializer.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Runtime.Serialization.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.ServiceModel.Internals.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Net.Http.dll
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.IO.Compression.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.ComponentModel.DataAnnotations.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.ComponentModel.Composition.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Numerics.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.ServiceModel.dll
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.Droid\obj\Debug\assemblies\System.Xml.Linq.dll

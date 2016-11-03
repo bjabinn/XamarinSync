@@ -4,17 +4,17 @@ using System.Text;
 using System.Net.Http;
 using System.IO;
 using System.IO.Compression;
+using System.Threading.Tasks;
 
 
 namespace Shared
 {
     public class SyncService
     {
-        static string DefaultUrl = "http://rabattz.de"; //Settings.GetString("Defaulurl");
-        string Url = DefaultUrl + "/service/IOS3.aspx";
-        string mmUrl = DefaultUrl + "/service/mm.aspx";
+        static string DefaultUrl = "http://beuren.appyshopper.com"; //Settings.GetString("Defaulurl");
+        string Url = DefaultUrl + "/service/IOS3.aspx";        
 
-        public bool LastTransmissionFailed = false;
+        public bool LastTransmissionFailed;  //=false by default
 
         public string ConstructXml(StringBuilder xmlRequest, bool force, bool basketOnly, int maxSync)
         {
@@ -23,79 +23,73 @@ namespace Shared
 
         public byte[] PostSync(string xml)
         {
-            return __POST(Url, xml, true, false);
+            var result = __POST(Url, xml, true, false);
+            return result.Result;
         }
         
-        private async byte[] __POST(string url, string xml, bool logError, bool closeConnection) {
-
+        private async Task<byte[]> __POST(string url, string xml, bool logError, bool closeConnection) {
 	
 			LastTransmissionFailed = false;
+
 			if (string.IsNullOrEmpty(xml)) {
 				return null;
 			}
 			
-			var gzipXml = Compress(xml);			    
+			var gzipXml = Compress(xml);
 			
 			if (gzipXml == null) {
 				return null;
 			}
-			var se = new MemoryStream(gzipXml);
 
+            var httpClient = new HttpClient();
 
 		    try
-		    {
-		        string responseString;
-                using (var client = new HttpClient())
-                {
-                    var values = new Dictionary<string, string>
-                    {
-                        { "thing1", "hello" },
-                        { "thing2", "world" }
-                    };
+		    {		        
+                HttpContent content = new ByteArrayContent(gzipXml);
+                
+                var response = await httpClient.PostAsync(url, content);
 
-                    var content = new FormUrlEncodedContent(values);
+		        var responseContent = await response.Content.ReadAsStreamAsync();
 
-                    var response = await client.PostAsync(url, content);
-
-                    responseString = await response.Content.ReadAsStringAsync();
-                }
-		        if (string.IsNullOrEmpty(responseString))
+                if (responseContent == null)
 		        {
 		            return null;
 		        }
 			
 			    GZipStream stream = null;
-			    try {
-				    stream = new GZipStream(is, CompressionLevel.Optimal);
-				    byte[] bytes = IOUtils.toByteArray(stream);
-				    return bytes;
-				
-			    } catch (Exception e) {
-				    LastTransmissionFailed = true;
-				    var error = "Could not extract bytes from server response: " + e.Message;
-				    return null;
-			    }
-			    finally {
-				    if (stream != null)
-				    {
-				        stream.Close();
-				    }
-				    if (is != null) {
-					    is.close();
-				    }
-			    }
+		        try
+		        {                    
+		            stream = new GZipStream(responseContent, CompressionMode.Decompress);
 
+                    var streamOut = new MemoryStream();
+		            stream.CopyTo(streamOut);
+
+		            return streamOut.ToArray();
+
+		        }
+		        catch (Exception e)
+		        {
+		            LastTransmissionFailed = true;
+		            var error = "Could not extract bytes from server response: " + e.Message;
+		            return null;
+		        }
+		        finally
+		        {                    
+		            if (stream != null)
+		            {                        
+		                stream.Dispose();
+		            }
+		        }
 			
 		    } catch (Exception e) {
 			    var error = "Could not communicate with server: " + e.Message;
 			    return null;
 		    }
 		    finally {
-			    if (closeConnection) {
-				    safeClose();
-			    }
+                httpClient.Dispose();                
 		    }
-	    }
+            
+        }
 
         public static byte[] Compress(string str)
         {
@@ -123,7 +117,8 @@ namespace Shared
                     CopyTo(gs, mso);
                 }
 
-                return Encoding.UTF8.GetString(mso.ToArray());
+                //return Encoding.UTF8.GetString(mso.ToArray());
+                return string.Empty;            
             }
         }
 
@@ -138,9 +133,6 @@ namespace Shared
                 dest.Write(bytes, 0, cnt);
             }
         }
-
-
-
 
     }
 }

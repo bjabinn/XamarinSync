@@ -79,7 +79,7 @@ public class MonoPackageManager {
 
 class MonoPackageManager_Resources {
 	public static final String[] Assemblies = new String[]{
-		"Shared.Droid.dll",
+		"Syn_Android.dll",
 		"Shared.dll",
 		"System.Collections.Concurrent.dll",
 		"System.Collections.dll",
@@ -134,5 +134,5 @@ class MonoPackageManager_Resources {
 	};
 	public static final String[] Dependencies = new String[]{
 	};
-	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_23";
+	public static final String ApiPackageName = "Mono.Android.Platform.ApiLevel_19";
 }

@@ -1,6 +1,5 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\jose.beltran\documents\visual studio 2013\projects\syncxamarin\shared\shared.winphone\obj\debug\intermediatexaml\shared.winphone.exe" HashGuid="c7a993b0-b7a5-d1da-4262-bf5404bfbe07" />
-    <ReferenceAssembly PathName="c:\users\jose.beltran\documents\visual studio 2013\projects\syncxamarin\shared\shared\bin\debug\shared.dll" HashGuid="851e17f5-6d9c-7949-bc7d-eaba242e9660" />
+    <ReferenceAssembly PathName="c:\users\jose.beltran\documents\visual studio 2013\projects\syncxamarin\shared\shared\bin\debug\shared.dll" HashGuid="ba2dfdea-1176-6cd0-949e-3397e0623e25" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

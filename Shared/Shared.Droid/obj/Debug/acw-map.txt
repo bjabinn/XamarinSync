@@ -1,4 +1,16 @@
-Shared.Droid.MainActivity, Shared.Droid;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
-Shared.Droid.MainActivity, Shared.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
-Shared.Droid.MainActivity;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
-shared.droid.MainActivity;md50ec1a52c4b9e102d819e2c4fc25e307f.MainActivity
+Shared.Droid.MainActivity, Syn_Android;md54ead2850fb23bc5cfc28e41562bea525.MainActivity
+Shared.Droid.MainActivity, Syn_Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54ead2850fb23bc5cfc28e41562bea525.MainActivity
+Shared.Droid.MainActivity;md54ead2850fb23bc5cfc28e41562bea525.MainActivity
+shared.droid.MainActivity;md54ead2850fb23bc5cfc28e41562bea525.MainActivity
+Shared.Droid.ServiceBase, Syn_Android;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase
+Shared.Droid.ServiceBase, Syn_Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase
+Shared.Droid.ServiceBase;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase
+shared.droid.ServiceBase;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase
+Shared.Droid.ServiceBase/DemoServiceBinder, Syn_Android;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase_DemoServiceBinder
+Shared.Droid.ServiceBase+DemoServiceBinder, Syn_Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase_DemoServiceBinder
+Shared.Droid.ServiceBase.DemoServiceBinder;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase_DemoServiceBinder
+shared.droid.ServiceBase_DemoServiceBinder;md54ead2850fb23bc5cfc28e41562bea525.ServiceBase_DemoServiceBinder
+Shared.Droid.ServiceManagement, Syn_Android;md54ead2850fb23bc5cfc28e41562bea525.ServiceManagement
+Shared.Droid.ServiceManagement, Syn_Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md54ead2850fb23bc5cfc28e41562bea525.ServiceManagement
+Shared.Droid.ServiceManagement;md54ead2850fb23bc5cfc28e41562bea525.ServiceManagement
+shared.droid.ServiceManagement;md54ead2850fb23bc5cfc28e41562bea525.ServiceManagement

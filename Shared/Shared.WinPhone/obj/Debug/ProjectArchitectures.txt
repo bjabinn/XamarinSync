@@ -1,2 +1,0 @@
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared.WinPhone\Shared.WinPhone.csproj;neutral
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\Shared.csproj;neutral

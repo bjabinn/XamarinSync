@@ -1,7 +1,7 @@
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\bin\Debug\Shared.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\bin\Debug\Shared.pdb
-C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.dll
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.pdb
+C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.csprojResolveAssemblyReference.cache
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\obj\Debug\Shared.dll.mdb
 C:\Users\jose.beltran\Documents\Visual Studio 2013\Projects\SyncXamarin\Shared\Shared\bin\Debug\Shared.dll.mdb
